@@ -1,7 +1,6 @@
 import React from 'react'
 import './row.css'
 import { useDroppable } from '@dnd-kit/core'
-import { SortableContext } from '@dnd-kit/sortable';
 import { task } from '../types/task';
 import Task from '../flight/task/Task';
 
@@ -19,13 +18,11 @@ function TeamRow({teamName, tasks}: TeamRowItemProps) {
     <div className='row'>
         <div className='name'>{teamName}</div>
         <div className='flights'>
-        <SortableContext items={[]}>
-            <div ref={setNodeRef} className='sort-flights'>
-              {tasks.map((task) => (
+          <div ref={setNodeRef} className='sort-flights'>
+            {tasks.map((task) => (
                     <Task task={task} key={task.id}/>
-              ))}
-            </div>
-        </SortableContext>
+            ))}
+          </div>
         </div>
     </div>
   )

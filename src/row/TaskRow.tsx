@@ -14,9 +14,9 @@ function TaskRow({name, flights}: TaskRowItemProps) {
         <div className='name'>{name}</div>
         <div className='flights'>
         <div className='sort-flights'>
-                {flights.map((flight) => (
-                    <Flight flight={flight} key={flight.id}/>
-                ))}
+          {flights.map((flight) => (
+            <Flight flight={flight} key={flight.id}/>
+          ))}
             </div>
         </div>
     </div>
