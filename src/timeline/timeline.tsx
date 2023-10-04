@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import TeamRow from '../row/Teamrow'
 import TaskRow from '../row/TaskRow'
-import { DndContext, PointerSensor, closestCenter, useSensor, useSensors } from '@dnd-kit/core'
+import { DndContext, MouseSensor, TouchSensor, closestCenter, useSensor, useSensors } from '@dnd-kit/core'
 import { INITIAL_FLIGHTS } from '../data'
 import { task } from '../types/task'
 
@@ -20,8 +20,12 @@ function Timeline() {
 
   if (tasks.length === 0) updateTimeline();
 
+  const mouseSensor = useSensor(MouseSensor);
+  const touchSensor = useSensor(TouchSensor);
+
   const sensors = useSensors(
-    useSensor(PointerSensor),
+    mouseSensor,
+    touchSensor
   );
   return (
     <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={(e) => {
