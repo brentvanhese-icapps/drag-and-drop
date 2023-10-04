@@ -17,6 +17,9 @@ function Timeline() {
       ))
     ))
   }
+
+  if (tasks.length === 0) updateTimeline();
+
   const sensors = useSensors(
     useSensor(PointerSensor),
   );
