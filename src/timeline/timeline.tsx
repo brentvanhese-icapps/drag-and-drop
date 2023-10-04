@@ -4,6 +4,7 @@ import TaskRow from '../row/TaskRow'
 import { DndContext, MouseSensor, TouchSensor, closestCenter, useSensor, useSensors } from '@dnd-kit/core'
 import { INITIAL_FLIGHTS } from '../data'
 import { task } from '../types/task'
+import { restrictToWindowEdges } from '@dnd-kit/modifiers'
 
 function Timeline() {
   const flights = INITIAL_FLIGHTS;
@@ -28,7 +29,7 @@ function Timeline() {
     touchSensor
   );
   return (
-    <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={(e) => {
+    <DndContext sensors={sensors} collisionDetection={closestCenter} modifiers={[restrictToWindowEdges]} onDragEnd={(e) => {
       const container = e.over?.id;
       let task: task = e.active.data.current?.task;
       if (container === "Team 1") {
