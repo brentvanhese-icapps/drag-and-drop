@@ -20,9 +20,9 @@ function Flight({flight}: FlightItemProps) {
       </div>
       <div className='tasks'>
         {flight.tasks.map((task) => (
-          <div ref={setNodeRef} >
+          <div ref={setNodeRef} key={task.id} >
             {task.team === 'Tasks' ?
-            <Task task={task} key={task.id}/>
+            <Task task={task}/>
             :
             <></>
             }
