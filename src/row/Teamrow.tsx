@@ -15,10 +15,10 @@ function TeamRow({teamName, tasks}: TeamRowItemProps) {
   });
 
   return (
-    <div className='row'>
+    <div ref={setNodeRef} className='row'>
         <div className='name'>{teamName}</div>
         <div className='flights'>
-          <div ref={setNodeRef} className='sort-flights'>
+          <div className='sort-flights'>
             {tasks.map((task) => (
                     <Task task={task} key={task.id}/>
             ))}
