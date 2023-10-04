@@ -1,0 +1,18 @@
+.task {
+    font-size: smaller;
+    background-color: lightcoral;
+    border-radius: 4px;
+    color: white;
+    margin: 0 5px;
+    padding: 4px 8px;
+}
+
+.taskInTimeline {
+    font-size: smaller;
+    background-color: lightcoral;
+    border-radius: 4px;
+    color: white;
+    margin: 10px 5px;
+    padding: 25px 8px;
+    min-width: 6rem;
+}
