@@ -35,9 +35,12 @@ function Timeline() {
         task.team = "Team 2";
         updateTimeline();
       }
-
       else if (container === "Team 3") {
         task.team = "Team 3";
+        updateTimeline();
+      }
+      else {
+        task.dragging = false;
         updateTimeline();
       }
     }} onDragStart={(e) => {
