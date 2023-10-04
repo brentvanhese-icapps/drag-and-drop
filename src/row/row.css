@@ -1,0 +1,29 @@
+.row {
+    background-color: lightgray;
+    border-radius: 4px;
+    height: 7rem;
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-areas: 
+    "name tasks"
+    ;
+
+    .name {
+        grid-area: name;
+        font-style: bold;
+        margin: auto;
+    }
+
+    .flights {
+        grid-area: tasks;
+        border: 1px solid black;
+        border-radius: 4px;
+        margin: 10px;
+
+        .sort-flights {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
